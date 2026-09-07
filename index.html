@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdf5f5; /* Görsele uyumlu açık krem/pembe tonu */
+            --bg-color: #fdf5f5;
             --text-main: #4a3b3a;
             --text-accent: #8b6d6a;
             --btn-bg: #d4a3a3;
@@ -42,7 +42,6 @@
             padding-bottom: 40px;
         }
 
-        /* Yeni Görselin Stili */
         .header-image {
             width: 100%;
             height: auto;
@@ -57,7 +56,6 @@
             margin-top: 20px;
         }
 
-        /* Geri Sayım Stilleri */
         .countdown-container {
             display: flex;
             justify-content: center;
@@ -91,8 +89,9 @@
         .parents {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             margin: 30px 0 40px 0;
-            font-size: 0.9em;
+            font-size: 0.95em;
             letter-spacing: 1px;
             color: var(--text-main);
             line-height: 1.6;
@@ -175,34 +174,6 @@
             line-height: 1.5;
         }
 
-        .wishlist {
-            text-align: left;
-            background: #ffffff;
-            padding: 15px 20px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            margin-bottom: 20px;
-        }
-
-        .wishlist-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f0e6e6;
-            font-size: 0.9em;
-            color: var(--text-main);
-        }
-
-        .wishlist-item:last-child {
-            border-bottom: none;
-        }
-
-        .wishlist-icon {
-            margin-right: 12px;
-            font-size: 1.2em;
-            color: var(--btn-bg);
-        }
-
         .iban-card {
             background: #ffffff;
             padding: 15px;
@@ -260,7 +231,7 @@
             .countdown-item { width: 55px; padding: 10px 5px; }
             .countdown-value { font-size: 1.4em; }
             .countdown-label { font-size: 0.65em; }
-            .parents { flex-direction: column; gap: 20px; margin-top: 15px; }
+            .parents { flex-direction: row; gap: 10px; margin-top: 15px; align-items: flex-start; }
             .content-wrapper { padding: 0 15px; }
             .iban-box { flex-direction: column; gap: 8px; align-items: flex-start; }
             .copy-btn { width: 100%; margin-left: 0; }
@@ -298,15 +269,17 @@
 
             <!-- Aileler -->
             <div class="parents">
-                <div style="line-height: 1.8;">
-                    Ayten Yıldız<br>
-                    <span style="font-size: 0.8em; opacity: 0.7;">&</span><br>
-                    İsmail Altınata
+                <!-- Gelin Ailesi (Ayrı) -->
+                <div style="display: flex; flex-direction: column; gap: 25px;">
+                    <div>Ayten Yıldız</div>
+                    <div>İsmail Altınata</div>
                 </div>
-                <div style="line-height: 1.8;">
-                    Havva Demirsoy<br>
-                    <span style="font-size: 0.8em; opacity: 0.7;">&</span><br>
-                    Hayri Demirsoy
+                
+                <!-- Damat Ailesi -->
+                <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                    <div style="line-height: 1.8;">
+                        Havva & Hayri<br>DEMİRSOY
+                    </div>
                 </div>
             </div>
 
@@ -338,35 +311,9 @@
                 </a>
             </div>
 
-            <!-- Hediye ve İhtiyaçlar Bölümü -->
             <div class="gift-section">
-                <div class="gift-title">HEDİYE & İHTİYAÇ LİSTEMİZ</div>
-                <p class="gift-desc">
-                    Yeni hayatımızı kurarken yanımızda olduğunuz ve nazik düşünceleriniz için teşekkür ederiz. Dilerseniz aşağıda evimizin eksiklerine göz atabilir veya IBAN bilgilerini kullanabilirsiniz.
-                </p>
-
-                <!-- İhtiyaç Listesi -->
-                <div class="wishlist">
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">☕</span> Philips 5500 Serisi Tam Otomatik Kahve Makinesi
-                    </div>
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">🧹</span> Xiaomi S10T / S20 Serisi Robot Süpürge
-                    </div>
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">🏠</span> Sonoff Zigbee Akıllı Ev Röle ve Sensörleri
-                    </div>
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">🔌</span> Viko Karre Serisi Priz ve Anahtarlar
-                    </div>
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">🪑</span> Mutfak Tezgahı İçin Yüksekliği Ayarlanabilir Tabureler
-                    </div>
-                    <div class="wishlist-item">
-                        <span class="wishlist-icon">🪟</span> Ahşap Jaluzi Perdeler
-                    </div>
-                </div>
-
+                <div class="gift-title">HEDİYE & TAKI</div>
+                
                 <!-- Gelin IBAN -->
                 <div class="iban-card">
                     <div class="iban-title">Rümeysa Altınata</div>
@@ -385,7 +332,7 @@
                     </div>
                 </div>
             </div>
-
+         
             <div class="year">2026</div>
         </div>
     </div>
