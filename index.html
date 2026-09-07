@@ -166,13 +166,6 @@
             color: var(--text-accent);
             letter-spacing: 1.5px;
         }
-        
-        .gift-desc {
-            font-size: 0.85em;
-            color: var(--text-accent);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
 
         .iban-card {
             background: #ffffff;
@@ -242,7 +235,6 @@
 
     <div class="container">
         
-        <!-- YENİ GÖRSEL BURAYA EKLENDİ -->
         <img src="1.jpg" alt="Rümeysa & Furkan" class="header-image">
 
         <div class="content-wrapper">
@@ -311,14 +303,18 @@
                 </a>
             </div>
 
+            <!-- Hediye & Takı IBAN Bölümü -->
             <div class="gift-section">
                 <div class="gift-title">HEDİYE & TAKI</div>
+                <div style="font-size: 0.85em; color: var(--text-accent); margin-bottom: 20px;">
+                    Nazik düşünceleriniz için teşekkür ederiz.
+                </div>
                 
                 <!-- Gelin IBAN -->
                 <div class="iban-card">
                     <div class="iban-title">Rümeysa Altınata</div>
                     <div class="iban-box">
-                        <span id="iban1">TR00 0000 0000 0000 0000 0000 00</span>
+                        <span id="iban1">TR62 0015 7000 0000 0099 7268 36</span>
                         <button class="copy-btn" onclick="copyIban('iban1', this)">Kopyala</button>
                     </div>
                 </div>
@@ -327,7 +323,7 @@
                 <div class="iban-card">
                     <div class="iban-title">Nazif Furkan Demirsoy</div>
                     <div class="iban-box">
-                        <span id="iban2">TR72 0006 2001 2300 0006 6673 60</span>
+                        <span id="iban2">TR76 0020 3000 0947 1400 0000 02</span>
                         <button class="copy-btn" onclick="copyIban('iban2', this)">Kopyala</button>
                     </div>
                 </div>
