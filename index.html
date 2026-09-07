@@ -224,7 +224,7 @@
             .countdown-item { width: 55px; padding: 10px 5px; }
             .countdown-value { font-size: 1.4em; }
             .countdown-label { font-size: 0.65em; }
-            .parents { flex-direction: row; gap: 10px; margin-top: 15px; align-items: flex-start; }
+            .parents { flex-direction: column; gap: 25px; margin-top: 25px; align-items: center; }
             .content-wrapper { padding: 0 15px; }
             .iban-box { flex-direction: column; gap: 8px; align-items: flex-start; }
             .copy-btn { width: 100%; margin-left: 0; }
@@ -261,18 +261,19 @@
 
             <!-- Aileler -->
             <div class="parents">
-                <!-- Gelin Ailesi -->
-                <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                    <div style="line-height: 1.6;">
-                        Ayten Yıldız<br>
-                        <span style="font-size: 0.8em; opacity: 0.7;">&</span><br>
-                        İsmail Altınata
-                    </div>
+                <!-- Gelin Ailesi (Grid Düzeni ile Tam Hizalı) -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; column-gap: 12px; row-gap: 3px; align-items: center;">
+                    <div style="text-align: right;">Ayten</div>
+                    <div style="color: var(--text-accent); font-family: 'Playfair Display', serif; font-size: 1.2em; font-style: italic;">&</div>
+                    <div style="text-align: left;">İsmail</div>
+                    <div style="text-align: right;">YILDIZ</div>
+                    <div></div> <!-- Orta kısım (ampersandın altı) boş kalıyor -->
+                    <div style="text-align: left;">ALTINATA</div>
                 </div>
                 
                 <!-- Damat Ailesi -->
                 <div style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                    <div style="line-height: 1.8;">
+                    <div style="line-height: 1.5; text-align: center;">
                         Havva & Hayri<br>DEMİRSOY
                     </div>
                 </div>
