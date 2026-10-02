@@ -55,11 +55,14 @@
             font-weight: 600;
         }
 
+        /* Basılı davetiyedeki ile aynı italik serif görünüm */
         .page-subtitle {
-            font-size: 0.9em;
-            line-height: 1.8;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15em;
+            line-height: 1.7;
             color: var(--text-main);
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .divider {
@@ -106,80 +109,6 @@
             border: 0;
         }
 
-        .video-note {
-            font-size: 0.85em;
-            font-style: italic;
-            color: var(--text-accent);
-            margin-top: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        .gift-section {
-            margin: 30px 0;
-            padding: 25px 20px;
-            background: #fcf9f9;
-            border-radius: 8px;
-            border: 1px dashed var(--btn-bg);
-        }
-
-        .gift-title {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            font-family: 'Playfair Display', serif;
-            color: var(--text-accent);
-            letter-spacing: 1.5px;
-        }
-
-        .gift-text {
-            font-size: 0.9em;
-            line-height: 1.8;
-        }
-
-        .iban-card {
-            background: #ffffff;
-            padding: 15px;
-            margin: 15px 0 0 0;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            text-align: left;
-        }
-
-        .iban-title {
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 5px;
-            font-size: 0.95em;
-        }
-
-        .iban-box {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f9f9f9;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.9em;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            background: var(--btn-bg);
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8em;
-            margin-left: 10px;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
-        }
-
-        .copy-btn:hover {
-            background: var(--btn-hover);
-        }
-
         .map-btn {
             display: inline-block;
             background-color: var(--btn-bg);
@@ -209,8 +138,8 @@
         @media (max-width: 480px) {
             .content-wrapper { padding: 0 15px; }
             .page-title { font-size: 1.6em; letter-spacing: 2px; }
-            .iban-box { flex-direction: column; gap: 8px; align-items: flex-start; }
-            .copy-btn { width: 100%; margin-left: 0; }
+            .page-subtitle { font-size: 1.05em; }
+            .video-section { padding: 15px; }
         }
     </style>
 </head>
@@ -222,40 +151,26 @@
 
             <h1 class="page-title">BAĞIŞ</h1>
             <div class="page-subtitle">
-                Bizim için en güzel hediye, mutluluğumuzun bir ihtiyaç sahibine<br>
-                dokunabilmesi olurdu. 🤍
+                Mutluluğumuzu paylaşarak<br>
+                çoğaltmak adına,<br>
+                bu özel günümüzde sizler için<br>
+                Filistin'deki kardeşlerimizin<br>
+                sofrasına sıcak yemek ulaştırdık.
             </div>
 
             <div class="divider"></div>
 
-            <!-- Örnek video - yayına almadan önce kendi videonuzun ID'si ile değiştirin -->
+            <!-- Videoyu değiştirmek için aşağıdaki embed adresindeki YouTube ID'sini güncelleyin -->
             <div class="video-section">
                 <div class="video-title">VİDEO</div>
                 <div class="video-frame">
                     <iframe
-                        src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"
-                        title="Örnek video"
+                        src="https://www.youtube-nocookie.com/embed/CiFoHm7HD94"
+                        title="Bağış videosu"
                         loading="lazy"
                         referrerpolicy="strict-origin-when-cross-origin"
                         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
-                </div>
-                <div class="video-note">🎬 Bu bir örnek videodur, kendi videonuzla değiştirebilirsiniz.</div>
-            </div>
-
-            <!-- Bağış Bilgileri -->
-            <div class="gift-section">
-                <div class="gift-title">BAĞIŞ BİLGİLERİ</div>
-                <div class="gift-text">
-                    Katkıda bulunmak isterseniz aşağıdaki hesabı kullanabilirsiniz.
-                </div>
-                <!-- TODO: Aşağıdaki hesap adı ve IBAN alanlarını gerçek bilgilerle doldurun -->
-                <div class="iban-card">
-                    <div class="iban-title">Hesap Adı (doldurulacak)</div>
-                    <div class="iban-box">
-                        <span id="iban1">TR00 0000 0000 0000 0000 0000 00</span>
-                        <button class="copy-btn" onclick="copyIban('iban1', this)">Kopyala</button>
-                    </div>
                 </div>
             </div>
 
@@ -265,20 +180,5 @@
         </div>
     </div>
 
-    <script>
-        // IBAN Kopyalama Fonksiyonu
-        function copyIban(elementId, btn) {
-            var ibanText = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(ibanText).then(function() {
-                var originalText = btn.innerText;
-                btn.innerText = "Kopyalandı!";
-                btn.style.background = "#8b6d6a";
-                setTimeout(function() {
-                    btn.innerText = originalText;
-                    btn.style.background = "var(--btn-bg)";
-                }, 2000);
-            });
-        }
-    </script>
 </body>
 </html>
